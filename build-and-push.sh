@@ -20,16 +20,16 @@ make html
 # Update GitHub Pages #
 #######################
 
-git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
- 
+git config --global user.name "Andy Cho"
+git config --global user.email "pictorial77@gmail.com"
+
 docroot=`mktemp -d`
 rsync -av "_build/html/" "${docroot}/"
  
 pushd "${docroot}"
 
 git init
-git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git remote add deploy "git@github.com:pictorial77/docs.git"
 git checkout -b gh-pages
  
 # Adds .nojekyll file to the root to signal to GitHub that  
